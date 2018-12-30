@@ -8,5 +8,5 @@ request({
   url: `https://maps.googleapis.com/maps/api/geocode/json?address=${addr}&key=${apiKey}&sensor=true`,
   json: true
 }, (err, res, body) => {
-  console.log(body);
+  console.log(JSON.stringify(body, undefined, 2));
 })
