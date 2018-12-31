@@ -2,8 +2,10 @@ const request = require('request');
 const apiKey = process.env.GEOCODE_API_KEY
 
 var geocodeAddress = (addr, callback) => {
+  var encodedAddr = encodeURIComponent(addr);
+
   request({
-    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${addr}&key=${apiKey}&sensor=true`,
+    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddr}&key=${apiKey}&sensor=true`,
     json: true
   }, (err, res, body) => {
     if (err) {
