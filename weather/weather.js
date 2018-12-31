@@ -1,5 +1,5 @@
 const request = require('request');
-var darkSkyKey = process.env.DARK_SKY_API_KEY;
+const darkSkyKey = process.env.DARK_SKY_API_KEY;
 
 var getWeather = (addr, callback) => {
   request({
